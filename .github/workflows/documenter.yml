@@ -1,0 +1,44 @@
+name: Documentation
+
+on:
+    push:
+        branches:
+            - main
+        tags: "*"
+    pull_request:
+    workflow_dispatch:
+
+permissions:
+    contents: write
+    pages: write
+    id-token: write
+
+jobs:
+    docs:
+        name: Documentation
+        runs-on: ubuntu-latest
+        concurrency:
+            group: docs
+            cancel-in-progress: false
+        steps:
+            - uses: actions/checkout@v7
+            - uses: julia-actions/setup-julia@v3
+              with:
+                  version: "1.12"
+            - name: Configure doc environment
+              shell: julia --project=docs --color=yes {0}
+              run: |
+                  using Pkg
+                  Pkg.develop(PackageSpec(path=pwd()))
+                  Pkg.instantiate()
+            - uses: julia-actions/julia-buildpkg@v1
+            - uses: julia-actions/julia-docdeploy@v1
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            - name: Run doctests
+              shell: julia --project=docs --color=yes {0}
+              run: |
+                  using Documenter: DocMeta, doctest
+                  using CardiacAbstractions
+                  DocMeta.setdocmeta!(CardiacAbstractions, :DocTestSetup, :(using CardiacAbstractions); recursive=true)
+                  doctest(CardiacAbstractions)

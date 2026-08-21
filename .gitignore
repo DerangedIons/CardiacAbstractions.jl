@@ -1,2 +1,24 @@
-.*.review.md
+*.jl.*.cov
+*.jl.cov
+*.jl.mem
+Manifest.toml
+Manifest-v*.toml
+
+# docs
+/docs/build/
+
+# VSCode
+.vscode
+*.code-workspace
+
+# Mac stuff
 .DS_Store
+
+# Peekaboo review sidecars
+.*.review.md
+
+# Local Claude Code artifacts
+.claude/
+
+# Syncthing/iCloud conflict copies
+*sync-conflict*

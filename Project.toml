@@ -1,0 +1,7 @@
+name = "CardiacAbstractions"
+uuid = "1e869aa1-d22c-4ab1-b303-21cc32f669ba"
+version = "0.1.0"
+authors = ["Kyle Beggs"]
+
+[compat]
+julia = "1.10"

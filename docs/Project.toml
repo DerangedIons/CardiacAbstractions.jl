@@ -1,0 +1,6 @@
+[deps]
+CardiacAbstractions = "1e869aa1-d22c-4ab1-b303-21cc32f669ba"
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+
+[compat]
+Documenter = "1"

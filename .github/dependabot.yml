@@ -1,0 +1,12 @@
+# Keep GitHub Actions up to date. There is no `julia` ecosystem block on purpose:
+# the package has zero dependencies.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
