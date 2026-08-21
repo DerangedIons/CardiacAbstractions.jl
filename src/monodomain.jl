@@ -29,7 +29,8 @@ The monodomain equation
                  ∂ₜs = f(φₘ, s, t)
 ```
 
-for transmembrane potential `φₘ` and cell-model states `s`, declared mesh-free. A model
+for transmembrane potential `φₘ` and cell-model states `s`, declared at the continuum
+level. A model
 is an inert description of the continuous problem; [`semidiscretize`](@ref) turns it into
 a right-hand side on whatever geometry a backend provides.
 

@@ -1,6 +1,6 @@
 <h1 align="center">CardiacAbstractions.jl</h1>
 
-<p align="center"><em>The mesh-free vocabulary of cardiac electrophysiology — one set of model declarations, many backends.</em></p>
+<p align="center"><em>The continuum-level vocabulary of cardiac electrophysiology — one set of model declarations, many backends.</em></p>
 
 <p align="center">
   <a href="https://DerangedIons.github.io/CardiacAbstractions.jl/stable"><img src="https://img.shields.io/badge/docs-stable-blue.svg" alt="Stable Docs"></a>

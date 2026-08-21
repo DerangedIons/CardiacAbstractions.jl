@@ -2,7 +2,7 @@
     AbstractStimulationProtocol
 
 Root of the stimulation vocabulary: an externally applied stimulation current, declared
-mesh-free as a callable `(x, t) -> Iₛₜᵢₘ`. Deliberately wider than the transmembrane
+at the continuum level as a callable `(x, t) -> Iₛₜᵢₘ`. Deliberately wider than the transmembrane
 family — split intra-/extracellular stimulation re-enters through this seam when bidomain
 declarations join the base.
 
@@ -63,7 +63,7 @@ end
     AnalyticalTransmembraneStimulationProtocol(; f, nonzero_intervals = nothing)
 
 A transmembrane stimulus given by a plain callable `f(x, t) -> Iₛₜᵢₘ`, positive =
-depolarizing. The declaration is mesh-free: a structured-grid backend evaluates `f`
+depolarizing. The declaration is continuum-level: a structured-grid backend evaluates `f`
 pointwise, an FEM backend lowers it into its coefficient machinery at
 [`semidiscretize`](@ref) time.
 

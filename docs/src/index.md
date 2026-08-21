@@ -1,6 +1,6 @@
 # CardiacAbstractions.jl
 
-CardiacAbstractions.jl is the mesh-free vocabulary shared by cardiac-electrophysiology backends: the continuous model declarations (`MonodomainModel`), the split annotations (`ReactionDiffusionSplit`), the stimulation vocabulary, the cell-model contract (`AbstractCellModel` and its query methods), and the pipeline verbs (`semidiscretize`, `create_initial_condition`) as empty generic functions each backend adds methods to.
+CardiacAbstractions.jl is the continuum-level vocabulary shared by cardiac-electrophysiology backends: the continuous model declarations (`MonodomainModel`), the split annotations (`ReactionDiffusionSplit`), the stimulation vocabulary, the cell-model contract (`AbstractCellModel` and its query methods), and the pipeline verbs (`semidiscretize`, `create_initial_condition`) as empty generic functions each backend adds methods to.
 
 The boundary rule is simple: **anything touching a mesh, grid, dof handler, operator, or array layout belongs to a backend** — Lightning.jl (structured grids, matrix-free, GPU) or Thunderbolt.jl (FEM on Ferrite, complex geometry). Everything continuous and declarative lives here, with zero dependencies, so neither backend pays anything to take it. Both backends re-export this vocabulary, so end users write `using Lightning` or `using Thunderbolt` and never import CardiacAbstractions directly.
 

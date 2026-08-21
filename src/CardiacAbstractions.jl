@@ -1,7 +1,7 @@
 """
     CardiacAbstractions
 
-The mesh-free vocabulary shared by cardiac-electrophysiology backends: continuous model
+The continuum-level vocabulary shared by cardiac-electrophysiology backends: continuous model
 declarations, split annotations, the stimulation vocabulary, the cell-model contract, and
 the pipeline verbs. The boundary rule is simple — anything touching a mesh, grid, dof
 handler, operator, or array layout belongs to a backend (Lightning, Thunderbolt); the
