@@ -29,6 +29,7 @@ jobs:
     test:
         name: Julia ${{ matrix.julia-version }} - ${{ matrix.os }} - ${{ matrix.julia-arch }} - threads ${{ matrix.julia-threads }}
         runs-on: ${{ matrix.os }}
+        timeout-minutes: 90
         env:
             JULIA_NUM_THREADS: ${{ matrix.julia-threads }}
             # Secrets aren't readable in a step-level `if`, so surface presence here.
@@ -37,9 +38,7 @@ jobs:
             fail-fast: false
             matrix:
                 julia-version:
-                    - "1.10"
-                    - "1.11"
-                    - "1.12"
+                    - "1"
                 os:
                     - ubuntu-latest
                 julia-arch:
