@@ -17,6 +17,7 @@ jobs:
     docs:
         name: Documentation
         runs-on: ubuntu-latest
+        timeout-minutes: 90
         concurrency:
             group: docs
             cancel-in-progress: false
@@ -27,7 +28,7 @@ jobs:
             - uses: actions/checkout@v7
             - uses: julia-actions/setup-julia@v3
               with:
-                  version: "1.12"
+                  version: "1"
             - name: Authenticate to private DerangedIons deps
               if: env.HAS_APP_KEY == 'true'
               uses: DerangedIons/.github/actions/julia-private-deps@main
